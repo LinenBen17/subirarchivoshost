@@ -1,0 +1,564 @@
+/* Fonts */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,regular,500,600,700,800,300italic,italic,500italic,600italic,700italic,800italic);
+@import url(https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+/* Body y head */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background: #CDCDCD;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+}
+/* ETIQUETA PARA QUITAR EL SCROLL DE LA PAGINA MIENTRAS CARGA */
+.hidden{
+    overflow: hidden;
+}
+/* PRELOADER */
+.loader{
+    position: fixed;
+    z-index: 25000;
+    background: #CDCDCD;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+.loader h1{
+    font-size: 100pt;
+    background: rgb(2,58,6);
+    background: linear-gradient(-121deg, rgba(2,58,6,1) 9%, rgba(5,25,37,1) 69%);
+    -webkit-background-clip: text;
+    color: transparent;
+    transition: 0.5s;
+    animation: colores 3s infinite;
+}
+.loader h2{
+    font-size: 22px;
+    color: #002A59;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+}
+.loader span{
+    position: absolute;
+    display: flex;
+    width: 10px;
+    background: #000;
+    height: 10px;
+}
+@keyframes colores{
+    0%, 100% {
+        animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
+    }
+    0% {
+        transform: rotateY(0deg);
+    }
+    50% {
+        transform: rotateY(1800deg);
+        animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
+    }
+    100% {
+        transform: rotateY(3600deg);
+    }
+}
+/* HEADER Y NAV */
+header nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.6s;
+    padding: 40px 100px;
+    z-index: 1000;
+}
+header nav.sticky{
+    padding: 5px 100px;
+    background: #071A2C;
+}
+header nav #logo{
+    position: relative;
+    width: 18%;
+    transition: 0.6s;
+}
+header nav ul{
+    position:  relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header nav ul li{
+    position: relative;
+    list-style: none;
+}
+header nav ul li a{
+    position: relative;
+    margin: 0 15px;
+    text-decoration: none;
+    color: #FFF;
+    letter-spacing: 2px;
+    font-weight: bolder;
+    transition: 0.6s;
+}
+header nav.sticky ul li a{
+    color: #FFF;
+}
+/* DESPLIEGUE DE PESTAÑA FORMULARIO */
+header nav ul li ul{
+    position: absolute;
+    border-radius: 8px;
+    display: block;
+    width: 250px;
+    transition: 0.6s;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.6s;
+}
+header nav.sticky ul li ul{
+    /* padding: 5px 100px; */
+    background: #071A2C;
+}
+header nav ul li.des a#aghs{
+    cursor: pointer;
+}
+header nav ul li.des a#aghs::after{
+    content: ' \f0dd';
+    font-family: 'FontAwesome';
+    transition: 0.5s;
+    position: absolute;
+    padding-left: 5px;
+    animation: opacidad1 1s;
+}
+header nav ul li.despl ul{
+    opacity: 1;
+    visibility: visible;
+}
+header nav ul li.despl a#aghs::after{
+    content: ' \f00d';
+    font-family: 'FontAwesome';
+    transition: 0.5s;
+    position: absolute;
+    padding-left: 5px;
+    animation: opacidad2 1s;
+}
+@keyframes opacidad1{
+from{
+opacity: 0;
+}
+to{
+opacity: 1;
+}
+}
+@keyframes opacidad2{
+from{
+opacity: 0;
+}
+to{
+opacity: 1;
+}
+}
+nav ul li.despl li a:hover{
+    color: rgb(199, 199, 199);
+}
+nav ul li ul li{
+    padding-top: 10px;
+}
+/* SECTION */
+section{
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    align-items: center;
+    min-height: 100vh;
+    background: #123B1A;
+}
+section::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: #071A2C;
+}
+.contenedor{
+    position: relative;
+    min-width: 1100px;
+    min-height: 550px;
+    display: flex;
+    z-index: 1000;
+    /* background: #fff; */
+}
+.contenedor .contenedorinfo{
+    position: absolute;
+    top: 40px;
+    width: 350px;
+    height: calc(100% - 80px);
+    background: linear-gradient(300deg, rgba(18,59,26,1) 22%, rgba(7,26,44,1) 76%);
+    z-index: 1;
+    padding: 40px 25px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 20px 25px rgba(0,0,0,0.15);
+}
+.contenedor .contenedorinfo h2{
+    color: #DDD;
+    font-size: 24px;
+    font-weight: 500;
+}
+.contenedor .contenedorinfo ul.info{
+    position: relative;
+    margin: 20px 0;
+}
+.contenedor .contenedorinfo ul.info li{
+    position: relative;
+    list-style: none;
+    display: flex;
+    margin: 20px 0;
+    align-items: flex-start;
+
+}
+.contenedor .contenedorinfo ul.info li a{
+    text-decoration: none;
+    color: rgb(199, 199, 199);
+}
+.contenedor .contenedorinfo ul.info li span:nth-child(1){
+    font-size: 30px;
+    min-width: 30px;
+}
+.contenedor .contenedorinfo ul.info li span:nth-child(1) i{
+    max-width: 100%;
+    color: rgb(199, 199, 199);
+}
+.contenedor .contenedorinfo ul.info li span:nth-child(2){
+    color: rgb(199, 199, 199);
+    margin-left: 10px;
+    font-weight: 400;
+}
+.contenedor .contenedorinfo ul.sci{
+    position: relative;
+    display: flex;
+}
+.contenedor .contenedorinfo ul.sci li{
+    list-style: none;
+    margin-right: 15px;
+}
+.contenedor .contenedorinfo ul.sci li a{
+    text-decoration: none;
+}
+.contenedor .contenedorinfo ul.sci li a i{
+    color: #DDD;
+    font-size: 30px;
+}
+.contenedor .contenedorform{
+    position: absolute;
+    padding: 70px 50px;
+    padding-left: 250px;
+    margin-left: 150px;
+    width: calc(100% - 150px);
+    height: 100%;
+    background: linear-gradient(123deg, rgba(18,59,26,1) 22%, rgba(7,26,44,1) 76%);
+    box-shadow: 0 50px 50px rgba(0,0,0,0.25);
+}
+.contenedor .contenedorform h2{
+    color: #DDD;
+    font-size: 24px;
+    font-weight: 500;
+}
+.contenedor .contenedorform .formBox{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-top: 30px;
+}
+.contenedor .contenedorform .formBox .inputBox{
+    position: relative;
+    margin-bottom: 35px;
+}
+.contenedor .contenedorform .formBox .inputBox.w50{
+    width: 47%;
+}
+.contenedor .contenedorform .formBox .inputBox.w100{
+    width: 100%;
+}
+.contenedor .contenedorform .formBox .inputBox input,
+.contenedor .contenedorform .formBox .inputBox textarea{
+    width: 100%;
+    resize: none;
+    padding: 5px 0;
+    font-size: 18px;
+    font-weight: 300;
+    color: rgb(199, 199, 199);
+    background: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #777;
+}
+.contenedor .contenedorform .formBox .inputBox textarea{
+    height: 120px;
+}
+.contenedor .contenedorform .formBox .inputBox span{
+    position: absolute;
+    left: 0;
+    padding: 5px 0;
+    pointer-events: none;
+    font-size: 18px;
+    font-weight: 400;
+    transition: 0.3s;
+    color: #DDD;
+}
+.contenedor .contenedorform .formBox .inputBox input:focus ~ span,
+.contenedor .contenedorform .formBox .inputBox input:valid ~ span,
+.contenedor .contenedorform .formBox .inputBox textarea:focus ~ span,
+.contenedor .contenedorform .formBox .inputBox textarea:valid ~ span{
+    transform: translateY(-20px);
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #FFF;
+    font-weight: 500;
+}
+.contenedor .contenedorform .formBox .inputBox input[type="submit"]{
+    position: relative;
+    cursor: pointer;
+    background: #b50001;
+    color: #FFF;
+    border: none;
+    max-width: 150px;
+    padding: 12px;
+}
+.contenedor .contenedorform .formBox .inputBox input[type="submit"]:hover{
+    background: #F00;
+}
+/** FORMULARIO ENVIAR CV **/
+input#my_file{
+    border: 10000px solid transparent;
+    cursor: pointer;
+    font-size: 10000px;
+    margin: 0;
+    opacity: 0;
+    outline: 0 none;
+    padding: 0;
+    position: absolute;
+    right: -1000px;
+    top: -1000px;
+}
+.cajaPlazas {
+   margin: 10px 0;  
+   height: 40px;
+   overflow: hidden;
+   width: 100%;
+   position:relative;
+}
+select {
+   background: rgba(255, 255, 255, 0);
+   border-top: none;
+   border-left: none;
+   border-right: none;
+   border-bottom: 1px solid #777;
+   font-size: 18px;
+   font-weight: 400;
+   color: #DDD;
+   height: 40px;
+   padding: 5px;
+   width: 100%;
+   cursor: pointer;
+}
+option {
+    color: #000;
+}
+select:focus{ outline: none;}
+
+div.uploadInput{
+    margin: 10px 0;
+    background-color: #b5000000;
+    border-bottom: 1px solid #777;
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+    margin: 10px 0;
+    min-height: 15px;
+    overflow: hidden;
+    padding: 7px;
+    position: relative;
+    width: 100%;
+}
+@media (max-width:1200px){
+    .contenedor{
+        width: 90%;
+        min-width: auto;
+        margin: 20px;
+        box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+    }
+    .contenedor .contenedorinfo{
+        top: 0;
+        height: 550px;
+        position: relative;
+        box-shadow: none;
+    }
+    .contenedor .contenedorform{
+        position: relative;
+        width: calc(100% - 350px);
+        padding-left: 0;
+        margin-left: 0;
+        padding: 40px;
+        height: 550px;
+    }
+}
+@media (max-width:991px){
+    header nav{
+        padding: 40px 45px;
+    }
+    header nav.sticky{
+        padding: 10px 45px;
+    }
+    section{
+        background: linear-gradient(180deg, rgba(2,58,6,1) 50%, rgba(5,25,37,1) 50%);
+    }
+    section::before{
+        display: none;
+    }
+    .contenedor{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .contenedor .contenedorform{
+        width: 100%;
+        height: auto;
+    }
+    .contenedor .contenedorinfo{
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+    }
+    .contenedor .contenedorinfo ul.sci{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+@media (max-width:800px){
+    header nav{
+        padding: 40px 30px;
+    }
+    header nav.sticky{
+        padding: 20px 30px;
+        background: #071A2C;
+    }
+    header nav #logo{
+        display: none;
+    }
+}
+@media (max-width:645px){
+    .menu-toggle{
+        display: block;
+        position: fixed;
+        width: 40px;
+        height: 40px;
+        z-index: 1000;
+        cursor: pointer;
+        text-align: center;
+        font-size: 30px;
+        color: #fff;
+        transition: 0.6s;
+    }
+    .menu-toggle::before{
+        content: '\f0c9';
+        font-family: fontAwesome;
+        line-height: 40px;
+    }
+    .menu-toggle.active::before{
+        content: '\f00d';
+    }
+    header .menu-toggle.sticky{
+        width: 100%;
+        background: #071A2C;
+    }
+    header nav{
+        display: none;
+    }
+    header nav{
+        padding: 40px 0;
+    }
+    header nav.sticky{
+        padding: 5px 0;
+    }
+    header nav #logo{
+        width: 100%;
+        max-width: 100%;
+        display: none;
+    }
+    header nav.active{
+        display: block;
+        width: 100%;
+        background: #071a2c73;
+        margin-top: 40px;
+        padding: 0 !important;
+    }
+    header nav.active ul{
+        display: block;
+    }
+    header nav.active ul li{
+        padding-bottom: 15px;
+    }
+    header nav.active.sticky{
+        width: 100%;
+        background: #071A2C;
+    }
+    header nav ul li.despl ul{
+        position: relative;
+        transition: 0;
+        margin-left: 20px;
+    }
+    .contenedor .contenedorform{
+        padding: 25px;
+    }
+    .contenedor .contenedorinfo{
+        padding: 25px;
+        align-items: flex-start;
+    }
+    .contenedor .contenedorinfo ul.sci{
+        margin-top: 40px;
+    }
+    .contenedor .contenedorform .formBox .inputBox.inputBox.w50{
+        width: 100%;
+    }
+}
+@media (max-width:600px) {
+    .contenedor .contenedorform{
+        padding: 25px;
+    }
+    .contenedor .contenedorinfo{
+        padding: 15px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .contenedor .contenedorinfo ul.sci{
+        margin-top: 40px;
+    }
+    .contenedor .contenedorform .formBox .inputBox.inputBox.w50{
+        width: 100%;
+    }
+    .contenedor .contenedorinfo ul.info li{
+        flex-direction: column;
+    }
+    .contenedor .contenedorinfo ul.info li span:nth-child(2){
+        margin-left: 0;
+    }
+}

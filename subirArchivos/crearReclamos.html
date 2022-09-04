@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Contacto | Transportes JR</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <META NAME="AUTHOR" CONTENT="LinenBen17">
+        <META NAME="REPLY-TO" CONTENT="servicioalcliente@transportesjrgt.com">
+        <LINK REV="made" href="mailto:servicioalcliente@transportesjrgt.com">
+        <META NAME="DESCRIPTION" CONTENT="Somos una empresa Guatemalteca creada desde el año 2009 con su visión de satisfacer la creciente necesidad de traslado de encomiendas y paquetes.">
+        <META NAME="KEYWORDS" CONTENT="TransJR,transjr,transportesjr,TransportesJR,JR,Trans,jr,paquetes,transportar,LinenBen17,envios,tranportes gt,transportes guatemala">
+        <META NAME="Resource-type" CONTENT="Document">
+        <META NAME="Revisit-after" CONTENT="10 days">
+        <META NAME="robots" content="INDEX">
+        <link href="css/crearReclamos.css" rel="stylesheet">
+        <link rel="stylesheet" type="" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $('.menu-toggle').click(function(){
+                    $('.menu-toggle').toggleClass('active')
+                    $('nav').toggleClass('active')
+                })
+            });
+        </script>
+        <script>
+            window.addEventListener("scroll", function(){
+                var header = document.querySelector("nav");
+                var menut = document.querySelector(".menu-toggle");
+                header.classList.toggle("sticky", window.scrollY > 0);
+                menut.classList.toggle("sticky", window.scrollY >0)
+            });
+        </script>
+        <script>
+            $(window).load(function() {
+                $(".loader").fadeOut("slow");
+                $('body').removeClass('hidden');
+            });
+        </script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-184036954-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-184036954-1');
+        </script>
+    </head>
+    <body class="hidden">
+            <!-- -----------------------------PRELOADER----------------------------- -->
+            <div class="loader">
+                <h1><i class="fa fa-truck" aria-hidden="true"></i></h1>
+                <h2>Cargando...</h2>
+            </div>
+            <!-- ----------------------------HEADER-------------------------------------->
+        <header>
+            <div class="menu-toggle"></div>
+            <!-- -----------------------BARRA DE NAVEGACIÓN ------------------------->
+            <nav class="" id="menu">
+            <!-- ----------------------- LUGAR DEL LOGO ----------------------------->
+            <img id="logo" src="https://i.ibb.co/yfBVM6C/Logo-7-7.png" alt="Logo Trans JR">
+                <ul>
+                    <li><a href="https://transportesjrgt.com/index.html#lugar_slide" class="active">Inicio</a></li>
+                    <li><a href="https://transportesjrgt.com/index.html#sobre_nosotros">Acerca de</a></li>
+                    <li class="des"><a id="aghs">Consultas</a>
+                        <ul>
+                            <li><a href="https://transportesjrgt.com/consulta_guias.php">Consulta de Guías</a></li>
+                            <li><a href="https://transportesjrgt.com/contacto.html">Contacto</a></li>
+                            <li><a href="https://transportesjrgt.com/solicitud.html">Solicitud Guias</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="https://transportesjrgt.com/index.html#slide_empresas">Empresas</a></li>
+                    <li><a href="https://transportesjrgt.com/index.html#ubicacion">Ubicanos</a></li>
+                </ul>
+                <script>
+                    document.querySelector(".des").addEventListener("click", function() {
+                        this.classList.toggle("despl");
+                    });
+                </script>
+            </nav>
+        </header>
+            <!-- -------------------------------SECTION--------------------------------->
+        <section>
+            <div class="contenedor">
+                <div class="contenedorinfo">
+                    <div>
+                        <h2>Información</h2>
+                        <ul class="info">
+                            <li>
+                                <span><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                                <span>20 calle 2-43 Z.3
+                                    Ciudad Guatemala, 01003-Guat. City,
+                                    Guatemala</span>
+                            </li>
+                            <li>
+                                <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                                <span><a href="mailto:servicioalcliente@transportesjrgt.com">servicioalcliente@transportesjrgt.com</a></span>
+                            </li>
+                            <li>
+                                <span><i class="fa fa-phone" aria-hidden="true"></i></span>
+                                <span><a href="tel:+50222995900">+502 2299-5900</a><br>
+                                    <a href="tel:+50250516652">+502 5051-6652</a></span>
+                            </li>
+                        </ul>
+                    </div>
+                    <ul class="sci">
+                        <li><a href="https://www.facebook.com/Transportes-JR-104633218055057/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li><a href="https://www.instagram.com/transjrgt/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                        <li><a href="https://wa.me/50250516652?text=%C2%A1Quisiera%20comunicarme%20con%20ustedes!" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a></li>
+                        <li><a href="https://www.youtube.com/channel/UC5VKWuCNCbMdB_upOfB2Cxw" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+                <div class="contenedorform">
+                    <h2>¿Desea realizar un reclamo?</h2>
+                    <form method="POST" action="upload.php" class="formBox" enctype="multipart/form-data">
+                        <div class="inputBox w50">
+                            <input type="text" name="nombre_cliente" required>
+                            <span>Nombre Completo</span>
+                        </div>
+                        <div class="inputBox w50">
+                            <input type="text" name="telefono_cliente" required>
+                            <span>Número Telefónico</span>
+                        </div>
+                        <div class="inputBox w50">
+                            <input type="e-mail" name="correo_cliente" required>
+                            <span>Correo electronico (e-mail)</span>
+                        </div>
+                        <div class="inputBox w50">
+                            <input type="text" name="numero_guia" required>
+                            <span>Número de Guía</span>
+                        </div>
+                        <div class="inputBox w50">
+                            <div class="uploadInput">
+                                <input type="file" id="my_file" name="foto_guia" class="my_file"><p class="filename">Subir Foto de la guía</p>
+                            </div>
+                        </div>
+                        <div class="inputBox w50">
+                            <div class="uploadInput">
+                                <input type="file" name="foto_producto[]" id="my_file" class="my_file" data-multiple-caption="{count} archivos seleccionados" multiple><p class="filename">Subir Foto(s) del producto dañado</p>
+                            </div>
+                        </div>
+                        <div class="inputBox w50">
+                            <div class="uploadInput">
+                                <input type="file" id="my_file" name="carta_reclamo" class="my_file"><p class="filename">Subir Carta del reclamo</p>
+                            </div>
+                        </div>
+                        <div class="inputBox w100">
+                            <input type="submit" value="Enviar">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <script type="text/javascript">
+            'use strict';
+            ;( function ( document, window, index )
+            {
+                var inputs = document.querySelectorAll( '.my_file' );
+                Array.prototype.forEach.call( inputs, function( input )
+                {
+                    var span = input.nextElementSibling
+
+                    input.addEventListener( 'change', function( e )
+                    {
+                        var fileName = '';
+                        if( this.files && this.files.length > 1 )
+                            fileName = ( this.getAttribute( 'data-multiple-caption' ) || '' ).replace( '{count}', this.files.length );
+                        else
+                            fileName = e.target.value.split( '\\' ).pop();
+
+                        if( fileName )
+                            span.innerHTML = fileName;
+                    });
+                });
+            }( document, window, 0 ));
+        </script>
+    </body>
+</html>
